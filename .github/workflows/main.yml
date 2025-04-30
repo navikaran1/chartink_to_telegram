@@ -1,0 +1,39 @@
+name: Chartink to Telegram
+
+on:
+  schedule:
+    # Runs at 9:25 AM UTC every weekday (Mon-Fri), then every hour at 25 minutes past the hour till 3:25 PM UTC.
+    - cron: '25 9-15 * * 1-5'
+  workflow_dispatch: {}
+
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Cache pip
+        uses: actions/cache@v3
+        with:
+          # Cache dependencies in ~/.cache/pip
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Chartink to Telegram script
+        run: |
+          python chartink_to_telegram.py
