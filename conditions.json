@@ -1,0 +1,25 @@
+[
+    {
+      "name": "Report-1",
+      "condition": "( {cash} ( latest open > latest low * 1.02 and latest close > latest open * 1.02 and latest close = latest high and latest sma ( close,10 ) > latest ema ( close,30 ) ) ) ",
+      "header": {
+        "SLNO-CODE": "7495",
+        "Overall BTST PROFIT %": "95.62",
+        "Overall 7 Day PROFIT %": "98.20",
+        "Overall BTST ROI": "5.43",
+        "Overall 7 Day ROI": "12.62"
+      }
+    },
+    {
+      "name": "Report-2",
+      "condition": "( {cash} ( latest open > latest low * 1.02 and latest close > latest open * 1.02 and latest close = latest high and latest sma ( close,10 ) > latest ema ( close,30 ) ) ) ",
+      "header": {
+        "SLNO-CODE": "1LAC-85568",
+        "Overall BTST PROFIT %": "95.59",
+        "Overall 7 Day PROFIT %": "99.30",
+        "Overall BTST ROI": "5.20",
+        "Overall 7 Day ROI": "12.46"
+      }
+    }
+  ]
+  
