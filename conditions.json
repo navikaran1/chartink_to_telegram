@@ -1,9 +1,20 @@
 [
     {
       "name": "Report-1",
-      "condition": "( {cash} ( latest open > latest low * 1.02 and latest close > latest open * 1.02 and latest close = latest high and latest sma ( close,10 ) > latest ema ( close,30 ) ) ) ",
+      "condition": "( {cash} ( ( latest open - latest low ) > ( latest high - latest open ) * 4 and latest close <= latest open - ( latest open * .0218 ) and latest ema( latest close , 150 ) < latest low * 1.25 and latest close < latest parabolic sar( 0.02 , 0.02 , 0.2 ) and 3 days ago min( 100 , latest low ) / 3 days ago max( 100 , latest high ) > 0.5 and latest low < 1 month ago low and latest low = monthly low and latest close > 150 and latest close < 1500 and latest volume > 300000 and 1 day ago rsi( 14 ) < 40 ) ) ",
       "header": {
-        "SLNO-CODE": "7495",
+        "SLNO-CODE": "1LAC-45717-ok",
+        "Overall BTST PROFIT %": "96.93",
+        "Overall 7 Day PROFIT %": "100",
+        "Overall BTST ROI": "4.19",
+        "Overall 7 Day ROI": "10.69"
+      }
+    },
+    {
+      "name": "Report-2",
+      "condition": "( {cash} ( latest open > latest low * 1.02 and latest close > latest open * 1.02 and latest close = latest high and latest sma( close,10 ) > latest ema( close,30 ) ) ) ",
+      "header": {
+        "SLNO-CODE": "7495-ok",
         "Overall BTST PROFIT %": "95.62",
         "Overall 7 Day PROFIT %": "98.20",
         "Overall BTST ROI": "5.43",
@@ -11,14 +22,47 @@
       }
     },
     {
-      "name": "Report-2",
-      "condition": "( {cash} ( latest open > latest low * 1.02 and latest close > latest open * 1.02 and latest close = latest high and latest sma ( close,10 ) > latest ema ( close,30 ) ) ) ",
+      "name": "Report-3",
+      "condition": "( {cash} ( latest wavetrend momentum( 10 , 21 , 4 ) > 0 and 1 day ago wavetrend momentum( 10 , 21 , 4 ) <= 0 and latest rsi( 14 ) > 20 and latest adx( 14 ) > 20 and weekly \"close - 1 candle ago close / 1 candle ago close * 100\" > 8 ) )",
       "header": {
-        "SLNO-CODE": "1LAC-85568",
+        "SLNO-CODE": "1LAC-85568-ok",
         "Overall BTST PROFIT %": "95.59",
         "Overall 7 Day PROFIT %": "99.30",
         "Overall BTST ROI": "5.20",
         "Overall 7 Day ROI": "12.46"
+      }
+    },
+     {
+      "name": "Report-4",
+      "condition": 	"( {cash} ( latest close = latest high and latest open < latest high and latest low < latest open and latest volume >= 100000 and latest close >= 20 and latest close >= 1 day ago close ) ) ",
+      "header": {
+        "SLNO-CODE": "1LAC-40404-ok",
+        "Overall BTST PROFIT %": "94.28",
+        "Overall 7 Day PROFIT %": "97.22",
+        "Overall BTST ROI": "5.22",
+        "Overall 7 Day ROI": "11.17"
+      }
+    },
+     {
+      "name": "Report-5",
+      "condition": 	"( {cash} ( latest close = latest high and latest close > latest ema( latest close , 9 ) and latest close > 100 and latest volume > 100000 and latest volume > 1 day ago volume and market cap > 1000 and earning per share[eps] > 0 ) ) ",
+      "header": {
+        "SLNO-CODE": "1LAC-41782-ok",
+        "Overall BTST PROFIT %": "94.16",
+        "Overall 7 Day PROFIT %": "96.91",
+        "Overall BTST ROI": "5.34",
+        "Overall 7 Day ROI": "10.37"
+      }
+    },
+       {
+      "name": "Report-6",
+      "condition": 	"( {cash} ( latest parabolic sar( 0.02,0.02,0.2 ) < latest close and 1 day ago parabolic sar( 0.02,0.02,0.2 ) >= 1 day ago close and latest ema( close,5 ) >= latest ema( close,8 ) and latest ema( close,13 ) < latest ema( close,8 ) and latest close = latest high ) ) ",
+      "header": {
+        "SLNO-CODE": "1LAC-70122-ok",
+        "Overall BTST PROFIT %": "92.17",
+        "Overall 7 Day PROFIT %": "95.45",
+        "Overall BTST ROI": "5.31",
+        "Overall 7 Day ROI": "12.63"
       }
     }
   ]
